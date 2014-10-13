@@ -9,6 +9,7 @@ plot2 <- function()
         req_data <- subset(data, DateTime == as.Date("2007-02-01") | DateTime == as.Date("2007-02-02"))
         req_data$DateTime <- strptime(paste(req_data$Date, req_data$Time), format = "%d/%m/%Y %H:%M:%S")
         png(file = "plot2.png", width = 480, height = 480, units = "px")
+        par(bg = NA)
         plot(req_data$DateTime, req_data$Global_active_power, type = "l", ylab = "Global Active Power (kilowatts)", xlab = "")
         dev.off()
 }
