@@ -8,7 +8,6 @@ plot1 <- function()
         data$DateTime <- as.Date(data$DateTime, format = "%d/%m/%Y %H:%M:%S")
         req_data <- subset(data, DateTime == as.Date("2007-02-01") | DateTime == as.Date("2007-02-02"))
         png(file = "plot1.png", width = 480, height = 480, units = "px")
-        par(bg = NA)
         hist(req_data$Global_active_power, col="red", main = "Global Active Power", xlab = "Global Active Power (kilowatts)")
         dev.off()
 }
